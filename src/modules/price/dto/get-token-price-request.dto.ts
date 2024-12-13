@@ -1,3 +1,3 @@
 export class GetTokenPriceRequestDto {
-    address: string;
+  address: string;
 }

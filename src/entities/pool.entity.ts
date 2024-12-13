@@ -1,35 +1,35 @@
-import { ChainId } from "src/constants/chain.constant";
-import { BaseEntity, Column, Entity, Generated, PrimaryColumn } from "typeorm";
+import { ChainId } from 'src/constants/chain.constant';
+import { BaseEntity, Column, Entity, Generated, PrimaryColumn } from 'typeorm';
 
 @Entity({
-    name: 'pool',
+  name: 'pool',
 })
 export class PoolEntity extends BaseEntity {
-    @PrimaryColumn({ type: 'uuid' })
-    @Generated('uuid')
-    id: string;
+  @PrimaryColumn({ type: 'uuid' })
+  @Generated('uuid')
+  id: string;
 
-    @Column()
-    protocol: string;
+  @Column()
+  protocol: string;
 
-    @Column()
-    address: string;
+  @Column()
+  address: string;
 
-    @Column()
-    baseSymbol: string;
+  @Column()
+  baseSymbol: string;
 
-    @Column()
-    baseAddress: string;
+  @Column()
+  baseAddress: string;
 
-    @Column()
-    quoteAddress: string;
+  @Column()
+  quoteAddress: string;
 
-    @Column()
-    quoteSymbol: string;
+  @Column()
+  quoteSymbol: string;
 
-    @Column({
-        type: 'enum',
-        enum: ChainId,
-    })
-    chainId: ChainId;
+  @Column({
+    type: 'enum',
+    enum: ChainId,
+  })
+  chainId: ChainId;
 }

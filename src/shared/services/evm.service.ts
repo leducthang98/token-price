@@ -1,9 +1,9 @@
-import { ChainId } from "src/constants/chain.constant";
+import type { ChainId } from 'src/constants/chain.constant';
 
 export class EvmService {
-    private rpcs: string[] = [];
+  private rpcs: string[] = [];
 
-    constructor(chainId: ChainId) {
-        // todo: get rpcs from chainId
-    }
+  constructor(_chainId: ChainId) {
+    // todo: get rpcs from chainId
+  }
 }

@@ -6,5 +6,5 @@ export const ERROR = {
   TOO_MANY_REQUESTS: {
     message: 'too many requests',
     code: 6,
-  }
+  },
 };

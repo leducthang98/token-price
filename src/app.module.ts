@@ -6,11 +6,11 @@ import { ThrottlerModule } from '@nestjs/throttler';
 import { TypeOrmModule } from '@nestjs/typeorm';
 
 import { COMMON_CONSTANT } from './constants/common.constant';
+import { PoolModule } from './modules/pool/pool.module';
+import { PriceModule } from './modules/price/price.module';
 import { ResponseTransformInterceptor } from './shared/interceptors/response.interceptor';
 import { ApiConfigService } from './shared/services/api-config.service';
 import { SharedModule } from './shared/shared.modules';
-import { PriceModule } from './modules/price/price.module';
-import { PoolModule } from './modules/pool/pool.module';
 
 @Module({
   imports: [
@@ -38,7 +38,7 @@ import { PoolModule } from './modules/pool/pool.module';
     {
       provide: APP_INTERCEPTOR,
       useClass: ResponseTransformInterceptor,
-    }
+    },
   ],
 })
 export class AppModule {}
