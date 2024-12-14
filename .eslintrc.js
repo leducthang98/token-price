@@ -278,7 +278,7 @@ module.exports = {
     'eqeqeq': ['error', 'smart'],
     'guard-for-in': 'error',
     'id-match': 'error',
-    'max-classes-per-file': ['error', 2],
+    'max-classes-per-file': ['error', 5],
     'max-len': [
       'error',
       {

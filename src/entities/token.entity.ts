@@ -2,24 +2,21 @@ import { ChainId } from 'src/constants/chain.constant';
 import { BaseEntity, Column, Entity, Generated, PrimaryColumn } from 'typeorm';
 
 @Entity({
-  name: 'pool',
+  name: 'token',
 })
-export class PoolEntity extends BaseEntity {
+export class TokenEntity extends BaseEntity {
   @PrimaryColumn({ type: 'uuid' })
   @Generated('uuid')
   id: string;
 
   @Column()
-  protocol: string;
-
-  @Column()
   address: string;
 
   @Column()
-  baseTokenId: string;
+  symbol: string;
 
   @Column()
-  quoteTokenId: string;
+  decimal: string;
 
   @Column({
     type: 'enum',

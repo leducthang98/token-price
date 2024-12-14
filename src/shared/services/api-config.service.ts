@@ -2,6 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import type { TypeOrmModuleOptions } from '@nestjs/typeorm';
 import { isNil } from 'lodash';
+import type { ChainId } from 'src/constants/chain.constant';
 
 @Injectable()
 export class ApiConfigService {
@@ -35,5 +36,13 @@ export class ApiConfigService {
     };
 
     return typeOrmConfig as TypeOrmModuleOptions;
+  }
+
+  getTheGraphApiKey(): string {
+    return this.getEnv('THE_GRAPH_API_KEY');
+  }
+
+  getRpcUrlsByChainId(chainId: ChainId): string[] {
+    return this.getEnv(`RPC_URLS_${chainId}`).split(',');
   }
 }
